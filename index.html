@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app ng-init="name = 'Erwin'; age = 31; total = 3 + 5; digitalCoins = [{ coinName: 'Bitcoin', symbol: 'btc'}, {coinName: 'Etherium', symbol: 'eth'}, {coinName: 'Ripple', symbol: 'xrp'}, {coinName: 'Cardano', symbol: 'ada'}, {coinName: 'Bitcoin Cash', symbol: 'bch'}, {coinName: 'Dogecoin', symbol: 'doge'}, {coinName: 'Litecoin', symbol: 'ltc'}]; curr = 1234567; currentDate = '2021-05-21';">
+<html lang="en" ng-app="" ng-init="name = 'Erwin'; age = 31; total = 3 + 5; digitalCoins = [{ coinName: 'Bitcoin', symbol: 'btc'}, {coinName: 'Etherium', symbol: 'eth'}, {coinName: 'Ripple', symbol: 'xrp'}, {coinName: 'Cardano', symbol: 'ada'}, {coinName: 'Bitcoin Cash', symbol: 'bch'}, {coinName: 'Dogecoin', symbol: 'doge'}, {coinName: 'Litecoin', symbol: 'ltc'}]; curr = 1234567; currentDate = '2021-05-21'; buttonClicks = 0;">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +7,7 @@
   <title>AngularJS - Training</title>
 
   <script src="lib/angular.min.js"></script>
+  <script src="lib/app.js"></script>
 </head>
 <body>
   <!-- Expressions -->
@@ -32,5 +33,18 @@
   </ul>
   <p>{{ curr | currency: 'P ': 2 }}</p>
   <p>{{ currentDate | date: 'MMMM yyyy' }}</p>
+
+  <!-- Directives - ng-click -->
+  <h4>NgClick</h4>
+  {{ buttonClicks }}
+  <button ng-click="buttonClicks = buttonClicks + 1">Click Me</button>
+
+  <!-- Data Binding - ng-bind -->
+  <p ng-bind="currentDate | date: 'MMMM'"></p>
+
+  <!-- Data Binding - ng-model -->
+  <input type="text" ng-model="name" /> {{ name }}
+  <!-- <br />
+  <button ng-click="name = 'John Doe'">Change Name</button> -->
 </body>
 </html>
