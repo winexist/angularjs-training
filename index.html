@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" ng-app ng-init="name = 'Erwin'; age = 31; total = 3 + 5; digitalCoins = [{ coinName: 'Bitcoin', symbol: 'btc'}, {coinName: 'Etherium', symbol: 'eth'}, {coinName: 'Ripple', symbol: 'xrp'}, {coinName: 'Cardano', symbol: 'ada'}, {coinName: 'Bitcoin Cash', symbol: 'bch'}, {coinName: 'Dogecoin', symbol: 'doge'}, {coinName: 'Litecoin', symbol: 'ltc'}]; curr = 1234567; currentDate = '2021-05-21';">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AngularJS - Training</title>
+
+  <script src="lib/angular.min.js"></script>
+</head>
+<body>
+  <!-- Expressions -->
+  <h1>Name: {{ name }}</h1>
+  <h4>Age: {{ age }}</h4>
+  <p>Total: {{ total }}</p>
+
+  <!-- Directives - ng-if -->
+  <div ng-if="total < 6">ngIf display/remove</div>
+
+  <!-- Directives - ng-show/ng-hide -->
+  <div ng-show="total > 6">Show</div>
+  <div ng-hide="total > 6">Hide</div>
+
+  <!-- Directives - ng-repeat -->
+  <ul>
+    <li ng-repeat="coin in digitalCoins">{{ coin.coinName }} - {{ coin.symbol }}</li>
+  </ul>
+
+  <!-- Filters -->
+  <ul>
+    <li ng-repeat="coin in digitalCoins | limitTo: 4 | orderBy: 'coinName' : true">{{ coin.coinName }} - {{ coin.symbol | uppercase }}</li>
+  </ul>
+  <p>{{ curr | currency: 'P ': 2 }}</p>
+  <p>{{ currentDate | date: 'MMMM yyyy' }}</p>
+</body>
+</html>
