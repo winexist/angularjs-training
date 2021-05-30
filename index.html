@@ -44,6 +44,13 @@
 
   <!-- Data Binding - ng-model -->
   <input type="text" ng-model="name" /> {{ name }}
+  <br>
+  <br>
+  Find Sum:
+  <input type="number" ng-model="firstNum"> + <input type="number" ng-model="secondNum">
+  <span ng-if="firstNum && secondNum"> = {{ firstNum + secondNum }}</span>
+  <br>
+  <br>
   <!-- <br />
   <button ng-click="name = 'John Doe'">Change Name</button> -->
 </body>
